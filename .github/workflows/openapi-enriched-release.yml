@@ -26,12 +26,12 @@ jobs:
         run: printf 'tag=%s\n' "$RESOLVED_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Checkout CIPP-API
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: ${{ steps.release_tag.outputs.tag }}
 
       - name: Checkout CIPP frontend
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: KelvinTegelaar/CIPP
           path: _frontend
