@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout CIPP-API
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Checkout CIPP frontend
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: KelvinTegelaar/CIPP
           path: _frontend
