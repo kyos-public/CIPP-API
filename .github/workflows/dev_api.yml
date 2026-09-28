@@ -22,12 +22,12 @@ jobs:
 
     steps:
       - name: "Checkout GitHub Action"
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
 
       - name: Login to Azure
-        uses: azure/login@v2
+        uses: azure/login@7184910d9eb2b1c5e48f7073824a90609bb9b6d6 # v2
         with:
           client-id: ${{ secrets.DEV_CLIENTID }}
           tenant-id: ${{ secrets.DEV_TENANTID }}
@@ -38,7 +38,7 @@ jobs:
         run: ./Tools/Build-DevApiModules.ps1
 
       - name: "Run Azure Functions Action"
-        uses: Azure/functions-action@v1
+        uses: Azure/functions-action@c5060b3b8bb1ebbcb531abd00c822ecbaa8ea656 # v1
         id: fa
         with:
           app-name: "cippjta72"
