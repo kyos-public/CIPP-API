@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: CIPP-API
+  namespace: kyos
+  description: "CIPP backend API (upstream, public)."
+  tags:
+    - powershell
+    - api
+    - m365
+    - open-source
+  annotations:
+    github.com/project-slug: kyos-public/CIPP-API
+spec:
+  type: service
+  owner: group:kyos/it-team
+  system: managed-services
