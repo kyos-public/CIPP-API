@@ -17,7 +17,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
 
       # Read and Trim Version
       - name: Read and Trim Version
@@ -50,14 +50,14 @@ jobs:
       - name: Generate Release Notes
         id: changelog
         if: env.tag_exists == 'false'
-        uses: mikepenz/release-changelog-builder-action@v5.0.0
+        uses: mikepenz/release-changelog-builder-action@a57c1b7c90e56d9c8b26a6ed5d1eed159369e117 # v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Create a new release tag
       - name: Create GitHub Release
         if: env.tag_exists == 'false'
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5 # v1.14.0
         with:
           tag: ${{ steps.get_version.outputs.version }}
           name: "v${{ steps.get_version.outputs.version }}"
@@ -84,7 +84,7 @@ jobs:
       # Upload to Azure Blob Storage
       - name: Azure Blob Upload with Destination folder defined
         if: env.tag_exists == 'false'
-        uses: LanceMcCarthy/Action-AzureBlobUpload@v3.3.0
+        uses: LanceMcCarthy/Action-AzureBlobUpload@ee8e2a8c8ab478395e5d5b33f3e3dcab41088a0d # v3.3.0
         with:
           connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
           container_name: cipp-api
